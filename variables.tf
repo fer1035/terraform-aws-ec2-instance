@@ -10,7 +10,8 @@ variable "security_groups" {
 
 variable "ami" {
   type        = string
-  description = "AMI with which to launch the instance."
+  default     = "ami-0022f774911c1d690"
+  description = "AMI with which to launch the instance. The default is for Amazon Linux 2 in us-east-1."
 }
 
 variable "instance_type" {
@@ -22,6 +23,9 @@ variable "instance_type" {
 variable "user_data" {
   type        = string
   description = "Commands to run when launching the instance."
+  default     = <<EOF
+#!/bin/bash
+EOF
 }
 
 variable "delete_on_termination" {
