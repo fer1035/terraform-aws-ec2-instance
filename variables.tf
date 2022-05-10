@@ -28,12 +28,6 @@ variable "user_data" {
 EOF
 }
 
-variable "delete_on_termination" {
-  type        = bool
-  default     = true
-  description = "Whether to delete the network interface during instance termination."
-}
-
 variable "public_key" {
   type        = string
   description = "SSH public key material to attach to the instance."
