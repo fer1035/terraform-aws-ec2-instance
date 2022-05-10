@@ -33,3 +33,26 @@ variable "delete_on_termination" {
   default     = true
   description = "Whether to delete the network interface during instance termination."
 }
+
+variable "public_key" {
+  type        = string
+  description = "SSH public key material to attach to the instance."
+}
+
+variable "managed_policy_arns" {
+  type        = list(string)
+  default     = ["arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore"]
+  description = "List of managed policy ARNs to attach to the instance profile."
+}
+
+variable "inline_actions" {
+  type        = list(string)
+  default     = ["logs:List*"]
+  description = "List of inline policy actions to attach to the instance profile."
+}
+
+variable "inline_resources" {
+  type        = list(string)
+  default     = ["*"]
+  description = "List of inline policy resources to attach to the instance profile."
+}
