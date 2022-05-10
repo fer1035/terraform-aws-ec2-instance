@@ -8,6 +8,6 @@ resource "aws_instance" "instance" {
   network_interface {
     network_interface_id  = aws_network_interface.netif.id
     device_index          = 0
-    delete_on_termination = var.delete_on_termination
+    delete_on_termination = false
   }
 }
