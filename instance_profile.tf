@@ -22,6 +22,7 @@ resource "aws_iam_role" "role" {
   })
 
   inline_policy {
+    name   = InstanceProfileInlinePolicy
     policy = data.aws_iam_policy_document.inline_policy.json
   }
 }
